@@ -7,12 +7,12 @@
 
         .EXAMPLE
         Get-ServiceAutoSS -Computername COMPUTER1,COMPUTER2,COMPUTER3
-		Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name} | ft
-		Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name -VERBOSE} | ft
+	Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name} | ft
+	Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name -VERBOSE} | ft
 
         .NOTES
         AUTHOR: James Anderson
-		LAST UPDATED: 6/9/2015
+	LAST UPDATED: 6/9/2015
 #>
 Function Get-ServiceAutoSS {
 [cmdletbinding()]
