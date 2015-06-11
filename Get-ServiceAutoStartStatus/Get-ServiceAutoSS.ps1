@@ -17,8 +17,8 @@
 		COMPUTER2		Net Driver HPZ12        Net Driver HPZ12       Auto                   Stopped                OK
 		COMPUTER3		gpsvc			Pml Driver HPZ12       Auto                   Stopped                OK
 
-		.EXAMPLE
-		Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name -VERBOSE} | ft
+	.EXAMPLE
+	Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name -VERBOSE} | ft
 
 
         .NOTES
