@@ -3,12 +3,23 @@
         Gets the 'Automatically Start' Service Status of a Given Computer
 
         .PARAMETER computername
-        Specifies the computername. Accepts Lists. Defaults to env:COMPUTERNAME
+        Specifies the computername. Accepts String Objects. Defaults to env:COMPUTERNAME
 
         .EXAMPLE
         Get-ServiceAutoSS -Computername COMPUTER1,COMPUTER2,COMPUTER3
-		Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name} | ft
+
+		:\>Get-ServiceAutoSS -Computername COMPUTER1,COMPUTER2,COMPUTER3 | format-table
+
+		Computername            Name                    DisplayName            StartMode              State                  Status
+		------------			----                    -----------            ---------              -----                  ------
+		COMPUTER1				gpsvc                   Group Policy Client    Auto                   Stopped                OK
+		COMPUTER2				gupdate                 Google Update Servi... Auto                   Stopped                OK
+		COMPUTER2				Net Driver HPZ12        Net Driver HPZ12       Auto                   Stopped                OK
+		COMPUTER3				gpsvc					Pml Driver HPZ12       Auto                   Stopped                OK
+
+		.EXAMPLE
 		Get-ADComputer -Filter {OperatingSystem -like "Window*Server*"} | Select Name | %{Get-ServiceAutoSS -Computername $_.Name -VERBOSE} | ft
+
 
         .NOTES
         AUTHOR: James Anderson
